@@ -59,5 +59,17 @@ namespace ProductManagement.Data.Repositories
 
         }
 
+        public bool ExistePorNome(string nome)
+        {
+            foreach(Produto p in _produtos)
+            {
+                if(p.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }

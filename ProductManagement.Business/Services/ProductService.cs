@@ -33,6 +33,10 @@ namespace ProductManagement.Business.Services
             {
                 throw new Exception("O preço deve ser maior que zero");
             }
+            if (_repositorio.ExistePorNome(nome))
+            {
+                throw new Exception("Já existe um produto com esse nome");
+            }
 
             //criar um objeto, depois das validações e preencher
             //as suas propriedades
